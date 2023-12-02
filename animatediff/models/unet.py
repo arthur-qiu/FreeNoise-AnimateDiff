@@ -88,6 +88,7 @@ class UNet3DConditionModel(ModelMixin, ConfigMixin):
         motion_module_kwargs           = {},
         unet_use_cross_frame_attention = None,
         unet_use_temporal_attention    = None,
+        **kwargs,
     ):
         super().__init__()
         

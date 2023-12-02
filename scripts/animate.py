@@ -94,6 +94,7 @@ def main(args):
                     width               = args.W,
                     height              = args.H,
                     video_length        = args.L,
+                    use_freenoise       = args.use_freenoise,
                 ).videos
                 samples.append(sample)
 
@@ -115,9 +116,10 @@ if __name__ == "__main__":
     parser.add_argument("--inference_config",      type=str, default="configs/inference/inference-v1.yaml")    
     parser.add_argument("--config",                type=str, required=True)
     
-    parser.add_argument("--L", type=int, default=16 )
+    parser.add_argument("--L", type=int, default=64 )
     parser.add_argument("--W", type=int, default=512)
     parser.add_argument("--H", type=int, default=512)
+    parser.add_argument("--use_freenoise", type=bool, default=True)
 
     args = parser.parse_args()
     main(args)

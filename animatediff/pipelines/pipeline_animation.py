@@ -28,6 +28,7 @@ from diffusers.utils import deprecate, logging, BaseOutput
 from einops import rearrange
 
 from ..models.unet import UNet3DConditionModel
+import random
 
 
 logger = logging.get_logger(__name__)  # pylint: disable=invalid-name
@@ -283,8 +284,18 @@ class AnimationPipeline(DiffusionPipeline):
                 f" {type(callback_steps)}."
             )
 
-    def prepare_latents(self, batch_size, num_channels_latents, video_length, height, width, dtype, device, generator, latents=None):
+    def prepare_latents(self, batch_size, num_channels_latents, video_length, height, width, dtype, device, generator, latents=None, use_freenoise=False):
         shape = (batch_size, num_channels_latents, video_length, height // self.vae_scale_factor, width // self.vae_scale_factor)
+        
+        if use_freenoise:
+            window_size = 16
+            window_stride = 4
+            latents = torch.randn(shape)
+            for frame_index in range(window_size, video_length, window_stride):
+                list_index = list(range(frame_index-window_size, frame_index+window_stride-window_size))
+                random.shuffle(list_index)
+                latents[:, :, frame_index:frame_index+window_stride] = latents[:, :, list_index]
+        
         if isinstance(generator, list) and len(generator) != batch_size:
             raise ValueError(
                 f"You have passed a list of generators of length {len(generator)}, but requested an effective batch"
@@ -330,6 +341,7 @@ class AnimationPipeline(DiffusionPipeline):
         return_dict: bool = True,
         callback: Optional[Callable[[int, int, torch.FloatTensor], None]] = None,
         callback_steps: Optional[int] = 1,
+        use_freenoise: Optional[bool] = False,
         **kwargs,
     ):
         # Default height and width to unet
@@ -377,6 +389,7 @@ class AnimationPipeline(DiffusionPipeline):
             device,
             generator,
             latents,
+            use_freenoise = use_freenoise,
         )
         latents_dtype = latents.dtype
 
@@ -392,7 +405,7 @@ class AnimationPipeline(DiffusionPipeline):
                 latent_model_input = self.scheduler.scale_model_input(latent_model_input, t)
 
                 # predict the noise residual
-                noise_pred = self.unet(latent_model_input, t, encoder_hidden_states=text_embeddings).sample.to(dtype=latents_dtype)
+                noise_pred = self.unet(latent_model_input, t, encoder_hidden_states=text_embeddings, use_freenoise=use_freenoise).sample.to(dtype=latents_dtype)
                 # noise_pred = []
                 # import pdb
                 # pdb.set_trace()

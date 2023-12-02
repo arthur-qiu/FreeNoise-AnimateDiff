@@ -5,7 +5,8 @@ from torch import nn
 
 from .attention import Transformer3DModel
 from .resnet import Downsample3D, ResnetBlock3D, Upsample3D
-from .motion_module import get_motion_module
+# from .motion_module import get_motion_module
+from .motion_module import get_window_motion_module as get_motion_module
 
 import pdb
 
