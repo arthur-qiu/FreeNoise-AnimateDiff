@@ -405,7 +405,7 @@ class AnimationPipeline(DiffusionPipeline):
                 latent_model_input = self.scheduler.scale_model_input(latent_model_input, t)
 
                 # predict the noise residual
-                noise_pred = self.unet(latent_model_input, t, encoder_hidden_states=text_embeddings, use_freenoise=use_freenoise).sample.to(dtype=latents_dtype)
+                noise_pred = self.unet(latent_model_input, t, encoder_hidden_states=text_embeddings).sample.to(dtype=latents_dtype)
                 # noise_pred = []
                 # import pdb
                 # pdb.set_trace()
