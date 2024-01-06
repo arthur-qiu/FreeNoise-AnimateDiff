@@ -24,14 +24,11 @@ Dahua Lin,
 Bo Dai
 <p style="font-size: 0.8em; margin-top: -1em">*Corresponding Author</p>
 
-<center>
 <img src=__assets__/animations/sample5_wo.gif>
 <p>w/o Noise Rescheduling</p>
-</center>
-<center>
+
 <img src=__assets__/animations/sample5.gif>
 <p>w Noise Rescheduling</p>
-</center>
 
 ## Run
 
