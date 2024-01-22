@@ -63,8 +63,11 @@ Set up following the codebase [AnimateDiff](https://github.com/guoyww/AnimateDif
 ## Disclaimer
 This project is released for academic use. We disclaim responsibility for user-generated content. Users are solely liable for their actions. The project contributors are not legally affiliated with, nor accountable for, users' behaviors. Use the generative model responsibly, adhering to ethical and legal standards.
 
-## Contact Us
-**Haonan Qiu**: [qhnmoon@gmail.com](qhnmoon@gmail.com)
+## Support For Other Models
+
+FreeNoise is supposed to work on other similar frameworks. An easy way to test compatibility is by shuffling the noise to see whether a new similar video can be generated (set eta to 0). If your have any questions about applying FreeNoise to other frameworks, feel free to contact [Haonan Qiu](http://haonanqiu.com/).
+
+Current official implementation: [FreeNoise-VideoCrafter](https://github.com/AILab-CVC/FreeNoise), [FreeNoise-AnimateDiff](https://github.com/arthur-qiu/FreeNoise-AnimateDiff), [FreeNoise-LaVie](https://github.com/arthur-qiu/FreeNoise-LaVie) 
 
 ## Acknowledgements
 Codebase built upon [AnimateDiff](https://github.com/guoyww/AnimateDiff).
