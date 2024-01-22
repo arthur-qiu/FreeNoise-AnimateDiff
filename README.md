@@ -53,10 +53,10 @@ Set up following the codebase [AnimateDiff](https://github.com/guoyww/AnimateDif
 
 ```
 @article{guo2023animatediff,
-  title={AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning},
-  author={Guo, Yuwei and Yang, Ceyuan and Rao, Anyi and Wang, Yaohui and Qiao, Yu and Lin, Dahua and Dai, Bo},
-  journal={arXiv preprint arXiv:2307.04725},
-  year={2023}
+      title={AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning},
+      author={Guo, Yuwei and Yang, Ceyuan and Rao, Anyi and Wang, Yaohui and Qiao, Yu and Lin, Dahua and Dai, Bo},
+      journal={arXiv preprint arXiv:2307.04725},
+      year={2023}
 }
 ```
 
