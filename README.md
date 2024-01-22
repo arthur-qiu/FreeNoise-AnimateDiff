@@ -10,8 +10,8 @@ Yong Zhang,
 Yingqing He,
 Xintao Wang,
 Ying Shan,
-Ziwei Liu*
-<p style="font-size: 0.8em; margin-top: -1em">*Corresponding Author</p>
+Ziwei Liu*  
+(*Corresponding Author)
 
 **[AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning](https://arxiv.org/abs/2307.04725)**
 </br>
@@ -21,16 +21,18 @@ Anyi Rao,
 Yaohui Wang,
 Yu Qiao,
 Dahua Lin,
-Bo Dai
-<p style="font-size: 0.8em; margin-top: -1em">*Corresponding Author</p>
+Bo Dai  
+(*Corresponding Author)
+</br>
 </br>
 
+<div align="center">
 <img src=__assets__/animations/sample5_wo.gif>
 <p>w/o Noise Rescheduling</p>
-<br>
 
 <img src=__assets__/animations/sample5.gif>
 <p>w Noise Rescheduling</p>
+</div>
 
 ## Run
 
