@@ -23,7 +23,7 @@ Yu Qiao,
 Dahua Lin,
 Bo Dai
 <p style="font-size: 0.8em; margin-top: -1em">*Corresponding Author</p>
-<br>
+</br>
 
 <img src=__assets__/animations/sample5_wo.gif>
 <p>w/o Noise Rescheduling</p>
@@ -49,7 +49,9 @@ Set up following the codebase [AnimateDiff](https://github.com/guoyww/AnimateDif
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }
+```
 
+```
 @article{guo2023animatediff,
   title={AnimateDiff: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning},
   author={Guo, Yuwei and Yang, Ceyuan and Rao, Anyi and Wang, Yaohui and Qiao, Yu and Lin, Dahua and Dai, Bo},
@@ -57,6 +59,12 @@ Set up following the codebase [AnimateDiff](https://github.com/guoyww/AnimateDif
   year={2023}
 }
 ```
+
+## Disclaimer
+This project is released for academic use. We disclaim responsibility for user-generated content. Users are solely liable for their actions. The project contributors are not legally affiliated with, nor accountable for, users' behaviors. Use the generative model responsibly, adhering to ethical and legal standards.
+
+## Contact Us
+**Haonan Qiu**: [qhnmoon@gmail.com](qhnmoon@gmail.com)
 
 ## Acknowledgements
 Codebase built upon [AnimateDiff](https://github.com/guoyww/AnimateDiff).
